@@ -1,0 +1,7 @@
+.DS_Store
+*.log
+*.pdf
+*.psd
+node_modules/
+build/
+Thumbs.db

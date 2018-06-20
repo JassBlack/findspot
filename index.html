@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>FindSpot</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="body">
+
+  <header class="title-header">
+    <h1 class="main-title">FindSpot</h1>
+  </header>
+
+  <main class="main">
+
+    <section class="main-form">
+      <form class="login-form" enctype="multipart/form-data">
+        <label class="login-form__label">
+          <input type="email" value="" placeholder="email" class="login-form__input  input-common" id="log-email" required>
+        </label>
+        <label class="login-form__label">
+          <input type="password" value="" placeholder="password" class="login-form__input  input-common" id="log-pass" required>
+        </label>
+        <button type="submit" class="button-common login-button">Log in</button>
+      </form>
+      <div class="registration">
+        <div class="registration__text">or</div>
+        <a href="#" class="registration__link  reg-link">Register</a href="#">
+      </div>
+    </section>
+
+    <section class="reg-section" style="display: none">
+      <form class="reg-form">
+        <h3 class="reg-form__title  form-title-common">Sign Up</h3>
+        <label class="reg-form__label">
+          <input type="email" value="" placeholder="Your email" class="reg-form__input  input-common" id="reg-email" required>
+        </label>
+        <label class="reg-form__label">
+          <input type="password" value="" placeholder="Your password" class="reg-form__input  input-common" id="reg-pass" required>
+        </label>
+        <button class="button-common reg-button">Register</button>
+        <div class="registration">
+        <div class="registration__text">or</div>
+        <a href="#" class="registration__link  login-link">Go back to Log In</a href="#">
+      </div>
+      </form>
+    </section>
+
+    <section class="app-section" style="display: none">
+      <header class="main-header">
+        <a href="" class="main-header__title-link">FindSpot</a>
+        <div class="main-header__icons-wrapper">
+          <a class="main-header__icon  main-header__icon--add-find  main-header__icon--add  main-header__icon--find"></a>
+          <a class="main-header__icon  main-header__icon--logout  logout-button"></a>
+        </div>
+      </header>
+
+      <div class="main-window">
+        <form class="app-form">
+          <h2 class="app-form__title  form-title-common">Type a city to find spot</h2>
+          <label class="app-form__label">
+            <input type="text" value="" placeholder="Mikkeli, for example" class="app-form__input  input-common" id="app-search" required>
+          </label>
+          <input type="submit" style="position: absolute; left: -9999px"/>
+        </form>
+        <div id="map"></div>
+      </div>
+
+      <div class="add-window" style="display: none">
+        <form class="add-form">
+          <h2 class="app-form__title  form-title-common">Click on the map to select place</h2>
+          <div id="map__add"></div>
+          <label class="add-form__label">
+            <input type="text" value="" placeholder="Type of the place" class="add-form__input  input-common" id="add-name" required>
+          </label>
+
+          <label class="add-form__label">
+            <textarea rows='4' value="" placeholder="Short description of the place" class="add-form__input  input-common" id="add-description" required></textarea>
+          </label>
+          <button type="submit" class="button-common login-button">Add place</button>
+        </form>        
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <a href="#" class="footer__appstore">
+        <span class="footer__text">
+          <div class="footer__text-item">Download in</div>
+          <div class="footer__text-item"><strong>App Store</strong></div>
+        </span>
+      </a>
+      <div class="footer__copyright">&copy; Copyright 2018 FindSpot</div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDlz1uJqcs7cF_Jg3NTWjqYTS8Wmt6i2Vs",
+      authDomain: "thesisproject-6959b.firebaseapp.com",
+      databaseURL: "https://thesisproject-6959b.firebaseio.com",
+      projectId: "thesisproject-6959b",
+      storageBucket: "thesisproject-6959b.appspot.com",
+      messagingSenderId: "779795282252"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="js/model.js"></script>
+  <script src="js/view.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmV1T_J6_noWuMYBJukYv3-eDBvhr3zmY&callback=loadPlaces"
+    async defer></script>
+</body>
+
+</html>
