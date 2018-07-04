@@ -84,6 +84,14 @@ function showApp() {
   document.querySelector('.title-header').style.display = 'none';
 };
 
+function showCheckbox() {
+  document.querySelector('.timer__sound').style.display = 'block';
+};
+
+function hideCheckbox() {
+  document.querySelector('.timer__sound').style.display = 'none'; 
+};
+
 //Model
 
 'use strict'
